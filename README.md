@@ -1,36 +1,123 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🚀 Next.js Authentication with NextAuth.js, PostgreSQL & Prisma
 
-## Getting Started
+This is a simple learning project that demonstrates user authentication (login & signup) using **Next.js**, **NextAuth.js**, **PostgreSQL**, **Prisma**, and **Docker**.
 
-First, run the development server:
+## 🛠️ Technologies Used
+
+- ⚛️ **Next.js** – React framework for full-stack applications
+- 🔐 **NextAuth.js** – Authentication library for Next.js
+- 🗄️ **PostgreSQL** – Relational database
+- 📦 **Prisma** – ORM for database interactions
+- 🐳 **Docker** – Containerized development environment
+
+---
+
+## 📌 Features
+
+✅ User Signup  
+✅ User Login  
+✅ Authentication with NextAuth.js  
+✅ PostgreSQL database with Prisma ORM  
+✅ Docker support for database container
+
+---
+
+## 🏗️ Getting Started
+
+### 🔧 Prerequisites
+
+Ensure you have the following installed:
+
+- [Node.js](https://nodejs.org/)
+- [Docker](https://www.docker.com/)
+
+### 🚀 Installation
+
+1️⃣ Clone this repository:
+
+```bash
+git clone https://github.com/your-username/your-repo.git
+cd your-repo
+```
+
+2️⃣ Install dependencies:
+
+```bash
+npm install
+```
+
+3️⃣ Set up the environment variables:
+
+Create a `.env` file in the root directory and add:
+
+```env
+DATABASE_URL="postgresql://user:password@localhost:5432/mydatabase"
+NEXTAUTH_SECRET="your-secret-key"
+NEXTAUTH_URL="http://localhost:3000"
+```
+
+4️⃣ Run the PostgreSQL container with Docker:
+
+```bash
+docker-compose up -d
+```
+
+5️⃣ Run the Prisma migrations:
+
+```bash
+npx prisma migrate dev --name init
+```
+
+6️⃣ Start the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 📂 Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+/your-repo
+ ├── /prisma          # Prisma schema and migrations
+ ├── /pages           # Next.js pages
+ │   ├── /api/auth    # NextAuth.js authentication routes
+ ├── /components      # Reusable React components
+ ├── /lib             # Utility functions and helpers
+ ├── .env             # Environment variables
+ ├── docker-compose.yml  # Docker configuration
+ ├── package.json     # Project dependencies
+ └── README.md        # Documentation
+```
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## 📝 Notes
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Uses **bcrypt** for password hashing.
+- **Prisma** handles database interactions.
+- **NextAuth.js** manages authentication.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## 🎯 Future Improvements
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+🔹 OAuth authentication (Google, GitHub)  
+🔹 Profile management
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## 🏆 Acknowledgments
+
+Thanks to **Next.js**, **Prisma**, **NextAuth.js**, and the open-source community!
+
+---
+
+## 📜 License
+
+This project is for learning purposes only. Feel free to modify and experiment!
+
+---
+
+Happy Coding! 🚀
